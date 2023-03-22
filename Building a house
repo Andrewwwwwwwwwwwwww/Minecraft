@@ -1,0 +1,29 @@
+agent.give("grass", 64, 1)
+agent.place("down", 1)
+agent.move("forward")
+agent.turn("right")
+agent.teleport(["~", "~", "~"], [0, 0, 0]) # Teleport agent to yourself, facing 0, 0, 0
+
+
+def WoodBroken():
+    blocks.on_block_broken(DIAMOND_ORE,WoodBroken)
+    
+#######################################################################
+
+
+agent.teleport(["~", "~", "~"], [0, 0, 0])
+
+
+
+
+agent.give("grass", 64, 1)
+agent.move("up")
+
+for k in range(3):
+    for j in range(4):
+        for i in range(6):
+            agent.place("down", 1)
+            agent.move("forward")
+        agent.turn("right")
+    agent.place("down")
+    agent.move("up")
